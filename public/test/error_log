@@ -1,0 +1,1 @@
+[19-Mar-2021 02:24:10 UTC] PHP Warning:  mysqli::__construct(): (HY000/2005): Unknown MySQL server host 'https://p3plzcpnl454196.prod.phx3.secureserver.net:2083/' (0) in /home/jzlsbwy7kqf6/public_html/test/testDB.php on line 7

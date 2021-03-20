@@ -1,0 +1,5 @@
+.paragraph-item {
+  word-break:normal;
+  text-align: left;
+  white-space: pre-wrap;
+}

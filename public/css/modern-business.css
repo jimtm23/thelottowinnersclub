@@ -1,0 +1,123 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--white);
+  font-weight: 400 !important;
+  font-size: 14.0pt;
+}
+
+.winning_numbers {
+  text-align: center!important;
+}
+
+.balls {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.balls li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  color: var(--heading-color);
+  border: 1px solid #9fa1a7;
+  font-size: 14px;
+  text-align: center;
+  margin: 3px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.balls .active {
+  background-color: var(--main-color);
+}
+
+.next-draw {
+  margin-top: 25px;
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.lotto-result {
+  margin-top: 25px;
+}
+
+.lwc-btn {
+      /* font-size: 20px; */
+      text-transform: capitalize;
+      background-color: var(--main-color);
+      color: #ffffff;
+      padding: 10px 26px;
+      font-weight: 400;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      font-size: 16px;
+      text-transform: uppercase;
+}
+
+.jackpot-prize {
+  background-color: var(--dark-main-color);
+  color:var(--main-color);
+  padding: 10px 5px;
+  border-radius: 15px;
+}
+
+.navbar-nav a {
+  padding: 29px 25px !important;
+}
+
+header.top-margin {
+  margin-top: 45px !important;
+}
+
+div.top-margin {
+  margin-top: 45px !important;
+  margin-bottom: 45px !important;
+  padding-top: 25px;
+}
+
+.errors ul {
+  margin-bottom: 0px;
+}
+
+.greeting {
+    color: var(--white);
+    font-weight: 400 !important;
+    font-size: 14.0pt;
+}
