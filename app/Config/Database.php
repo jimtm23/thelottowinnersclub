@@ -33,9 +33,9 @@ class Database extends Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => 'root',
-		'database' => 'lotto',
+		'username' => 'twc_admin',
+		'password' => 'Y=U6_MKj0FR[',
+		'database' => 'twc',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
