@@ -23,8 +23,24 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	// public $baseURL = 'http://elite-xpress.co/lwc/';
-	public $baseURL = 'http://thelottowinnersclub.com/';
+    public function __construct() {
+        parent::__construct();
+
+        $this->setBaseUrl(); // Set the Base URL
+    }
+
+	 public $baseURL = '';
+
+    protected function setBaseUrl() {
+        switch ($_ENV['CI_ENVIRONMENT']) {
+            case 'development':
+                $this->baseURL = "http://localhost:8080/";
+                break;
+            default:
+                $this->baseURL = "http://thelottowinnersclub.com/";
+                break;
+        }
+    }
 
 	/**
 	 * --------------------------------------------------------------------------

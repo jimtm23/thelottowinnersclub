@@ -77,6 +77,7 @@ class RegistrationController extends Controller
 
 		// send activation email
 		helper('auth');
+
         send_activation_email($user['email'], $user['activate_hash']);
 
 		// success

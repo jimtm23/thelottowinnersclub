@@ -21,8 +21,7 @@ if (! function_exists('send_activation_email'))
     	$email->setTo($to);
         $email->setSubject(lang('Auth.registration'));
 		$email->setMessage($htmlMessage);
-
-        return $email->send();
+        $email->send();
     }
 }
 
