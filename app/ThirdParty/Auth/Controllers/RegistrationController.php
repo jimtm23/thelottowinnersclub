@@ -80,8 +80,21 @@ class RegistrationController extends Controller
 
         send_activation_email($user['email'], $user['activate_hash']);
 
+        /*************** ACTIVATE AGAD **************/
+        $users2 = new UserModel();
+        $user3 = $users2->where('activate_hash', $user['activate_hash'])
+            ->where('active', 0)
+            ->first();
+
+        // update user account to active
+        $updatedUser['id'] = $user3['id'];
+        $updatedUser['active'] = 1;
+        $users2->save($updatedUser);
+        /*************** ACTIVATE AGAD **************/
+
 		// success
-        return redirect()->to('login')->with('success', lang('Auth.registrationSuccess'));
+//        return redirect()->to('login')->with('success', lang('Auth.registrationSuccess'));
+        return redirect()->to('login')->with('success', lang('Auth.activationSuccess'));
 	}
 
     //--------------------------------------------------------------------
