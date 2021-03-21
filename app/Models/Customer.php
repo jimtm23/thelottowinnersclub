@@ -14,8 +14,9 @@ class Customer extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 
-    protected $allowedFields = ['seq','amount', 'create_date', 'description', 'suffix',
-        'id', 'mode', 'notes', 'type', 'update_date'];
+    protected $allowedFields = ['user_id','first_name', 'middle_name', 'last_name', 'suffix',
+        'status', 'addr_no', 'addr_bldg', 'addr_street', 'addr_state', 'addr_country',
+        'addr_zipcode', 'id_type', 'id_photo', 'face_photo', 'attachment', 'notes'];
 
 	// Dates
 	protected $useTimestamps        = false;
