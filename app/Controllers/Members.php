@@ -25,7 +25,7 @@ class Members extends BaseController
 		$data['title'] = 'Member Page';
 		echo view('templates/header', $data);
 		echo view('templates/navbar');
-		echo view('members/index');
+		echo view('members/index.html');
 		echo view('templates/footer');
 		
 	}

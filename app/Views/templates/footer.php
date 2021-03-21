@@ -11,6 +11,7 @@
   <script src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="resources/bootstrap/js/swiper.min.js"></script>
   <script src="resources/bootstrap/js/jquery.countdown.min.js"></script>
+  <script src="resources/datatables/datatables.js"></script>
   <script src="js/custom.js"></script>
 
 </body>
