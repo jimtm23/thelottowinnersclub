@@ -1,6 +1,7 @@
 <?php
 namespace Auth\Controllers;
 
+use App\Models\Customer;
 use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
@@ -61,6 +62,7 @@ class RegistrationController extends Controller
 
 		// save new user, validation happens in the model
 		$users = new UserModel();
+
 		$getRule = $users->getRule('registration');
 		$users->setValidationRules($getRule);
         $user = [
@@ -78,7 +80,33 @@ class RegistrationController extends Controller
 		// send activation email
 		helper('auth');
 
-        send_activation_email($user['email'], $user['activate_hash']);
+//        send_activation_email($user['email'], $user['activate_hash']);
+
+        $customers = new Customer();
+        $customer = [
+            'user_id'       => $users->getInsertID(),
+            'first_name'    => $this->request->getPost('firstName'),
+            'middle_name'   => $this->request->getPost('middleName'),
+            'last_name'     => $this->request->getPost('lastName'),
+            'suffix'        => $this->request->getPost('suffix'),
+            'status'        => $this->request->getPost('status'),
+            'addr_no'       => $this->request->getPost('addr_num'),
+            'addr_bldg'     => $this->request->getPost('addr_bldg'),
+            'addr_street'   => $this->request->getPost('addr_street'),
+            'addr_state'    => $this->request->getPost('addr_state'),
+            'addr_country'  => $this->request->getPost('addr_country'),
+            'addr_zipcode'  => $this->request->getPost('addr_zipcode'),
+            'id_type'       => "sample",
+            'id_photo'      => "sample",
+            'face_photo'    => "sample",
+            'attachment'    => "sample",
+            'notes'         => "sample"
+        ];
+        try {
+            $customers->save($customer);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
         /*************** ACTIVATE AGAD **************/
         $users2 = new UserModel();

@@ -58,11 +58,11 @@ class Database extends Config
 	 */
 	public $tests = [
 		'DSN'      => '',
-		'hostname' => '127.0.0.1',
-		'username' => '',
-		'password' => '',
-		'database' => ':memory:',
-		'DBDriver' => 'SQLite3',
+		'hostname' => 'localhost',
+		'username' => 'twc_admin',
+		'password' => 'Y=U6_MKj0FR[',
+		'database' => 'twc_test',
+		'DBDriver' => 'MySQLi',
 		'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),

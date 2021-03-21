@@ -1,9 +1,22 @@
 <?php
 
 return [
+    //Addition info
+    'firstname'     => 'First Name',
+    'middleName'     => 'Middle Name',
+    'lastName'     => 'Last Name',
+    'suffix'     => 'Suffix',
+    'status'     => 'Status',
+    'addr_num'     => 'No.',
+    'addr_bldg'     => 'Building',
+    'addr_street'     => 'Street',
+    'addr_state'     => 'State',
+    'addr_country'     => 'Country',
+    'addr_zipcode'     => 'Zipcode',
+
     // Registration
     'registration' 			=> 'Registration',
-    'name' 					=> 'Name',
+    'name' 					=> 'Username',
     'email' 				=> 'E-mail address',
     'password'				=> 'Password',
     'passwordAgain'			=> 'Password again',
