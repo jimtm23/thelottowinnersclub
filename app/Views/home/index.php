@@ -48,7 +48,7 @@
     <div class="row lotto-result justify-content-md-center">
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="images/powerball.png" alt=""></a>
+          <a href="/draw/game/powerball"><img class="card-img-top" src="images/powerball.png" alt=""></a>
           <div class="card-body text-center">
             <div class="winning_numbers">
               <ul class="balls">
@@ -74,7 +74,7 @@
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="images/Megamillions.png" alt=""></a>
+          <a href="/draw/game/megamillions"><img class="card-img-top" src="images/Megamillions.png" alt=""></a>
           <div class="card-body text-center">
             <div class="winning_numbers">
               <ul class="balls">

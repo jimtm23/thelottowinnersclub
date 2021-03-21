@@ -24,7 +24,10 @@
                 </td>
                 <td> Power Ball Option 1</td>
                 <td>Confirmed</td>
-                <td>X</td>
+                <td>
+                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>Mar, 01, 2021 01:00</td>

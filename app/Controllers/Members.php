@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Auth\Models\UserModel;
 use Config\Services;
 
 class Members extends BaseController
@@ -25,7 +26,7 @@ class Members extends BaseController
 		$data['title'] = 'Member Page';
 		echo view('templates/header', $data);
 		echo view('templates/navbar');
-		echo view('members/index.html');
+		echo view('members/index.php');
 		echo view('templates/footer');
 		
 	}
