@@ -6,7 +6,7 @@
     </div>
     <br />
     <br />
-    <h2> Bet Orders      : </h2>
+    <h2> Bet Orders : </h2>
 
 
     <table class="table table-striped">
@@ -72,7 +72,7 @@
                 </td>
                 <td> Power Ball Option 1</td>
                 <td>Confirmed</td>
-                <td>                    
+                <td>
                     <button class="btn btn-danger">Cancel</button>
                 </td>
             </tr>
@@ -90,23 +90,27 @@
                 </td>
                 <td> Power Ball Option 1</td>
                 <td>Confirmed</td>
-                <td>                    
+                <td>
                     <button class="btn btn-danger">Cancel</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <br/>
-    <br/>
+    <br />
+    <br />
 
-    <h2> Payment Transactions      : </h2>
+    <h2> Load\Transfers Transactions : </h2>
+    <div class="form-group">
+        <button class="btn btn-primary">Paypal or other vcrd payments</button>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Date</th>
                 <th>Description</th>
                 <th>Amount</th>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -115,24 +119,24 @@
                 <td>
                     Paypal Transfer
                 </td>
-                <td> $ 100.00</td>                
+                <td> $ 100.00</td>
             </tr>
             <tr>
                 <td>Mar, 09, 2021 01:00</td>
                 <td>
                     Bet Payment
                 </td>
-                <td> $ 10.00</td>                
+                <td> $ 10.00</td>
             </tr>
             <tr>
                 <td>Mar, 08, 2021 01:00</td>
                 <td>
                     Bet payment
                 </td>
-                <td> $ 50.00</td>                
+                <td> $ 50.00</td>
             </tr>
-            
-            
+
+
         </tbody>
     </table>
 </div>
