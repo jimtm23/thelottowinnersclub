@@ -14,9 +14,8 @@ class Transactions extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 
-    protected $allowedFields = ['user_id','first_name', 'middle_name', 'last_name', 'suffix',
-        'status', 'addr_no', 'addr_bldg', 'addr_street', 'addr_state', 'addr_country',
-        'addr_zipcode', 'id_type', 'id_photo', 'face_photo', 'attachment', 'notes'];
+    protected $allowedFields = ['seq','id','description', 'mode', 'type', 'suffix',
+        'amount', 'create_date', 'update_date', 'notes'];
 
 	// Dates
 	protected $useTimestamps        = false;
