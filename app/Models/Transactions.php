@@ -40,4 +40,13 @@ class Transactions extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+
+	public function get_all_orders(){
+		$query = $this->db
+			  ->select('*')
+			  ->from('transactions')
+			  ->get();
+		return $query->result();
+	  }
+
 }

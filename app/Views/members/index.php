@@ -6,11 +6,12 @@
     </div>
     <br />
     <br />
-    <h2> Bet Orders : </h2>
+    <h2> Bet Orders : <?=  $trans ?></h2>
 
 
     <table class="table table-striped">
         <thead>
+        
             <tr>
                 <th>Date</th>
                 <th>Ticket Lucky Numbers</th>
@@ -18,6 +19,7 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+           
         </thead>
         <tbody>
             <tr>
