@@ -6,12 +6,11 @@
     </div>
     <br />
     <br />
-    <h2> Bet Orders : <?=  $trans ?></h2>
+    <h2> Bet Orders : </h2>
 
 
     <table class="table table-striped">
         <thead>
-        
             <tr>
                 <th>Date</th>
                 <th>Ticket Lucky Numbers</th>
@@ -22,6 +21,7 @@
            
         </thead>
         <tbody>
+        <?php foreach ($results as $result):?>
             <tr>
                 <td>Mar, 01, 2021 01:00</td>
                 <td>
@@ -41,6 +41,7 @@
                     <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>
+            <?php endforeach;?>
             <tr>
                 <td>Mar, 01, 2021 01:00</td>
                 <td>
