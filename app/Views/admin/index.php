@@ -6,7 +6,9 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Member Name</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
                 <th>Address</th>
                 <th>Contact Number</th>
                 <th>Status</th>
@@ -18,8 +20,11 @@
             <?php if ($results != null) {
                 foreach ($results as $result) : ?>
                     <tr>
-                        <td><?= $result['name'] ?></td>
-                        <td><?= $result['address'] ?></td>
+                        <td><?= $result['first_name'] ?></td>
+                        <td><?= $result['middle_name'] ?></td>
+                        <td><?= $result['last_name'] ?></td>
+                        <td><?= $result['addr_no'+'addr_street' +'addr_state']
+                        ?></td>
                         <td><?= $result['contact'] ?></td>
                         <td><?= $result['status'] ?></td>
                         <td>
