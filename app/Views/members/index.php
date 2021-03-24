@@ -18,13 +18,12 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-           
+
         </thead>
         <tbody>
-        <?php if($results != null) {?>
-        <?php foreach ($results as $result):?>
+
             <tr>
-                <td>Mar, 01, 2021 01:00</td>
+                <td>Mar 01, 2021</td>
                 <td>
                     <ul class="balls">
                         <li>1</li>
@@ -42,63 +41,8 @@
                     <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>
-            <?php endforeach;?>
-            <?php };?>
-            <tr>
-                <td>Mar, 01, 2021 01:00</td>
-                <td>
-                    <ul class="balls">
-                        <li>1</li>
-                        <li>36</li>
-                        <li>44</li>
-                        <li>54</li>
-                        <li>66</li>
-                        <li class="active">10</li>
-                    </ul>
-                </td>
-                <td> Power Ball Option 1</td>
-                <td>Ordered</td>
-                <td>
-                    <button class="btn btn-primary">Confirm</button>
-                    <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Mar, 01, 2021 01:00</td>
-                <td>
-                    <ul class="balls">
-                        <li>1</li>
-                        <li>36</li>
-                        <li>44</li>
-                        <li>54</li>
-                        <li>66</li>
-                        <li class="active">10</li>
-                    </ul>
-                </td>
-                <td> Power Ball Option 1</td>
-                <td>Confirmed</td>
-                <td>
-                    <button class="btn btn-danger">Cancel</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Mar, 01, 2021 01:00</td>
-                <td>
-                    <ul class="balls">
-                        <li>1</li>
-                        <li>36</li>
-                        <li>44</li>
-                        <li>54</li>
-                        <li>66</li>
-                        <li class="active">10</li>
-                    </ul>
-                </td>
-                <td> Power Ball Option 1</td>
-                <td>Confirmed</td>
-                <td>
-                    <button class="btn btn-danger">Cancel</button>
-                </td>
-            </tr>
+
+
         </tbody>
     </table>
     <br />
@@ -119,28 +63,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mar, 10, 2021 01:00</td>
-                <td>
-                    Paypal Transfer
-                </td>
-                <td> $ 100.00</td>
-            </tr>
-            <tr>
-                <td>Mar, 09, 2021 01:00</td>
-                <td>
-                    Bet Payment
-                </td>
-                <td> $ 10.00</td>
-            </tr>
-            <tr>
-                <td>Mar, 08, 2021 01:00</td>
-                <td>
-                    Bet payment
-                </td>
-                <td> $ 50.00</td>
-            </tr>
+            <?php if ($results != null) {
+                foreach ($results as $result) : ?>
+                    <tr>
+                        <td><?php $result['id'] ?></td>
+                        <td><?php $result['description'] ?>
+                        </td>
+                        <td><?php $result['amount'] ?></td>
+                    </tr>
 
+            <?php endforeach;
+            }; ?>
 
         </tbody>
     </table>

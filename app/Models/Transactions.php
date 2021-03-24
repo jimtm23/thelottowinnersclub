@@ -20,8 +20,8 @@ class Transactions extends Model
 	// Dates
 	protected $useTimestamps        = false;
 	protected $dateFormat           = 'datetime';
-	protected $createdField         = 'created_at';
-	protected $updatedField         = 'updated_at';
+	protected $createdField         = 'create_date';
+	protected $updatedField         = 'update_date';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation

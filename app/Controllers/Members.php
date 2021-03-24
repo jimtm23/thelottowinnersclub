@@ -29,7 +29,6 @@ class Members extends BaseController
 		$user = $users->find($this->session->get('userData.id'));
 
         $transModel = new Transactions();
-        $trans['trans'] = $transModel->findAll();
         
         $data['title'] = 'Member Page';
         $data['results'] = $transModel->findAll();
