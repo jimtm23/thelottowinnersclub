@@ -66,10 +66,10 @@
             <?php if ($results != null) {
                 foreach ($results as $result) : ?>
                     <tr>
-                        <td><?php $result['id'] ?></td>
-                        <td><?php $result['description'] ?>
+                        <td><?= $result['create_date'] ?></td>
+                        <td><?= $result['description'] ?>
                         </td>
-                        <td><?php $result['amount'] ?></td>
+                        <td><?= $result['amount'] ?></td>
                     </tr>
 
             <?php endforeach;

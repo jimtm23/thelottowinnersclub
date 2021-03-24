@@ -2,12 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\Transactions;
 use Auth\Models\UserModel;
 use Config\Services;
 use PhpParser\Node\Expr\List_;
 
-class Members extends BaseController
+class Admin extends BaseController
 {
 
     protected $session;
@@ -25,16 +24,12 @@ class Members extends BaseController
 
     public function index()
     {
-        $users = new UserModel();
-		$user = $users->find($this->session->get('userData.id'));
-
-        $transModel = new Transactions();
-        
-        $data['title'] = 'Member Page';
-        $data['results'] = $transModel->findAll(100);
+        $users = new UserModel();		
+        $data['title'] = 'Admin Page';
+        $data['results'] = $users->findAll(100);
         echo view('templates/header', $data);
         echo view('templates/navbar');         
-        echo view('members/index.php',);
+        echo view('admin/index.php',);
         echo view('templates/footer');
     }
 }

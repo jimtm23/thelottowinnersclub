@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="services.html">Admin</a>
+                <a class="nav-link" href="admin">Admin</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/members">Members</a>
