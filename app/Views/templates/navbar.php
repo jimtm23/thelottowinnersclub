@@ -13,7 +13,7 @@
                 <a class="nav-link" href="services.html">Admin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="members">Members</a>
+                <a class="nav-link" href="/members">Members</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/rules">Rules</a>

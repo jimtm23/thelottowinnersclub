@@ -11,12 +11,12 @@
         <tbody>
             <?php foreach ($results as $result):?>
             <tr>
-                <td><?=  $result['drawDate'] ?></td>
+                <td><?php  $date = new DateTime($result['drawDate']); echo $date->format('m/d/Y'); ?></td>
                     <td>
                         <ul class="balls">
                             <?php $numbers = explode("-",$result['winningNumbers']);?>
                             <?php foreach ($numbers as $number):?>
-                                <li><?php echo $number;?></li>
+                                <li><?= $number;?></li>
                             <?php endforeach;?>
                             <li class="active"><?php echo $result['winningBall'];?></li>
                         </ul>
@@ -30,6 +30,8 @@
 
 <script>
     $(document).ready(function() {
-        $('.table').DataTable();
+        $('.table').DataTable({
+            "order": [[ 0, "asc" ]]
+        });
     } );
 </script>

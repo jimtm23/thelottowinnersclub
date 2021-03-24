@@ -24,7 +24,6 @@ class Draw extends Controller
         echo view('templates/navbar');
         echo view('draw/game');
         echo view('templates/footer');
-
     }
 
     private function getLottoData($url) {
