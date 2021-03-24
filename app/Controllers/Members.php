@@ -32,7 +32,7 @@ class Members extends BaseController
         $trans['trans'] = $transModel->findAll();
         
         $data['title'] = 'Member Page';
-        $data['trans'] = $transModel->findAll();
+        $data['results'] = $transModel->findAll();
         echo view('templates/header', $data);
         echo view('templates/navbar');
         $db = db_connect();
