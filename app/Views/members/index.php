@@ -6,9 +6,32 @@
     </div>
     <br />
     <br />
-    <h2> Bet Orders : </h2>
+    <h2> Pick Your Number : </h2>
+    <div>
+        <ul class="balls">
+            <?php for ($i = 1; $i < 67; $i++) : ?>
+                <li><?= $i ?></li>
+            <?php endfor; ?>
+        </ul>
+    </div>
 
+    <div>
+        <label>Picked Number</label><br />
+        <input minlength="12" type="text" name="orderNumbers" value="" class="form-control" />
 
+        <label for="gameType">Game Option:</label>
+        <input list="gameOptions" name="gameType" id="gameType">
+        <datalist id="gameOptions">
+            <option value="Power Ball">
+            <option value="mega Million">
+            
+        </datalist>
+        <button class="btn btn-primary">Order</button>
+        <button class="btn btn-danger">Clear</button>
+    </div>
+    <br />
+    <br />
+    <h2> Bet Transactions : </h2>
     <table class="table table-striped">
         <thead>
             <tr>
