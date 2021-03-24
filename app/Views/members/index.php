@@ -21,6 +21,7 @@
            
         </thead>
         <tbody>
+        <?php if($results != null) {?>
         <?php foreach ($results as $result):?>
             <tr>
                 <td>Mar, 01, 2021 01:00</td>
@@ -42,6 +43,7 @@
                 </td>
             </tr>
             <?php endforeach;?>
+            <?php };?>
             <tr>
                 <td>Mar, 01, 2021 01:00</td>
                 <td>
