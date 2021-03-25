@@ -15,6 +15,8 @@
         </ul>
     </div>
 
+    <div>Lucky Pick</div>
+    <button class="btn btn-primary">Lucky Pick!</button>
     <div>
         <label>Picked Number</label><br />
         <input minlength="12" type="text" name="orderNumbers" value="" class="form-control" />
@@ -24,10 +26,10 @@
         <datalist id="gameOptions">
             <option value="Power Ball">
             <option value="mega Million">
-            
+
         </datalist>
         <button class="btn btn-primary">Order</button>
-        <button class="btn btn-danger">Clear</button>
+        <button class="btn btn-danger">Change</button>
     </div>
     <br />
     <br />
@@ -39,6 +41,7 @@
                 <th>Ticket Lucky Numbers</th>
                 <th>Game Type</th>
                 <th>Status</th>
+                <th>Notes</th>
                 <th>Action</th>
             </tr>
 
@@ -59,8 +62,8 @@
                 </td>
                 <td> Power Ball Option 1</td>
                 <td>Ordered</td>
-                <td>
-                    <button class="btn btn-primary">Confirm</button>
+                <td>call me maybe</td>
+                <td>                    
                     <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>
