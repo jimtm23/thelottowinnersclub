@@ -21,8 +21,9 @@ class Customer extends Migration
             'addr_state'		=> ['type' => 'varchar', 'constraint' => 191],
             'addr_country'      => ['type' => 'varchar', 'constraint' => 191],
             'addr_zipcode'      => ['type' => 'varchar', 'constraint' => 191],
+            'contact_no'        => ['type' => 'varchar', 'constraint' => 191],
             'id_type'           => ['type' => 'varchar', 'constraint' => 191, 'null' => true ],
-            'id_photo'          => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
+            'id_photo'          => ['type' => 'varchar', 'constraint' => 191, 'null' => true],          
             'face_photo'        => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
             'attachment'        => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
             'notes'             => ['type' => 'varchar', 'constraint' => 191, 'null' => true]

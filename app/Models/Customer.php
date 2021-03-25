@@ -16,6 +16,7 @@ class Customer extends Model
 
     protected $allowedFields = ['user_id','first_name', 'middle_name', 'last_name', 'suffix',
         'status', 'addr_no', 'addr_bldg', 'addr_street', 'addr_state', 'addr_country',
+		'contact_no',
         'addr_zipcode', 'id_type', 'id_photo', 'face_photo', 'attachment', 'notes'];
 
 	// Dates

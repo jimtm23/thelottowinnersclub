@@ -35,7 +35,7 @@ class Database extends Config
 		'hostname' => 'localhost',
 		'username' => 'twc_admin',
 		'password' => 'Y=U6_MKj0FR[',
-		'database' => 'twc',
+		'database' => 'winnersclub_db',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
