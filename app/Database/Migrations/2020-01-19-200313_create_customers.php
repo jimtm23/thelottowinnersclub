@@ -1,14 +1,15 @@
-<?php
-
-namespace App\Database\Migrations;
+<?php namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Customer extends Migration
+class CreateCustomersTable extends Migration
 {
+	/*
+	 * Users
+	 */
     public function up()
     {
-        $this->forge->addField([
+    	$this->forge->addField([
             'user_id'           => ['type' => 'int', 'constraint' => 11, 'unsigned' => true],
             'first_name'		=> ['type' => 'varchar', 'constraint' => 191],
             'middle_name'       => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
@@ -28,13 +29,14 @@ class Customer extends Migration
             'attachment'        => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
             'notes'             => ['type' => 'varchar', 'constraint' => 191, 'null' => true]
         ]);
-        $this->forge->addKey('user_id', true);
-        $this->forge->addForeignKey('user_id','users','id','CASCADE','CASCADE');
+        $this->forge->addKey('user_id', true);       
         $this->forge->createTable('customers', true);
     }
 
+    //--------------------------------------------------------------------
+
     public function down()
     {
-        $this->forge->dropTable('customers', true);
+    	$this->forge->dropTable('customers', true);
     }
 }
