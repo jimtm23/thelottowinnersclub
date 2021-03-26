@@ -66,7 +66,7 @@ class RegistrationController extends Controller
 		$getRule = $users->getRule('registration');
 		$users->setValidationRules($getRule);
         $user = [
-            'name'          	=> $this->request->getPost('name'),
+            //'name'          	=> $this->request->getPost('name'),
             'email'         	=> $this->request->getPost('email'),
             'password'     		=> $this->request->getPost('password'),
             'password_confirm'	=> $this->request->getPost('password_confirm'),
@@ -89,13 +89,14 @@ class RegistrationController extends Controller
             'middle_name'   => $this->request->getPost('middleName'),
             'last_name'     => $this->request->getPost('lastName'),
             'suffix'        => $this->request->getPost('suffix'),
-            'status'        => $this->request->getPost('status'),
+            //'status'        => $this->request->getPost('status'),
             'addr_no'       => $this->request->getPost('addr_num'),
             'addr_bldg'     => $this->request->getPost('addr_bldg'),
             'addr_street'   => $this->request->getPost('addr_street'),
             'addr_state'    => $this->request->getPost('addr_state'),
             'addr_country'  => $this->request->getPost('addr_country'),
             'addr_zipcode'  => $this->request->getPost('addr_zipcode'),
+			'contact_no'  	=> $this->request->getPost('contact_no'),
             'id_type'       => "sample",
             'id_photo'      => "sample",
             'face_photo'    => "sample",

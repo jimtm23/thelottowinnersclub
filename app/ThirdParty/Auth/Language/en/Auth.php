@@ -13,11 +13,12 @@ return [
     'addr_state'     => 'State',
     'addr_country'     => 'Country',
     'addr_zipcode'     => 'Zipcode',
+    'contact_no'    => 'Contact Number - +0019178100015',
 
     // Registration
     'registration' 			=> 'Registration',
     'name' 					=> 'Username',
-    'email' 				=> 'E-mail address',
+    'email' 				=> 'User ID/ E-mail address',
     'password'				=> 'Password',
     'passwordAgain'			=> 'Password again',
     'register'				=> 'Register',

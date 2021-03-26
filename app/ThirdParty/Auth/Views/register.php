@@ -9,10 +9,13 @@
             <form method="POST" action="<?= route_to('register'); ?>" accept-charset="UTF-8"
                 onsubmit="registerButton.disabled = true; return true;">
                 <?= csrf_field() ?>
+                <!--
                 <div class="form-group">
                     <label><?= lang('Auth.name') ?></label><br />
                     <input required minlength="2" type="text" name="name" value="<?= old('name') ?>"  class="form-control"/>
                 </div>
+                -->
+
                 <div class="form-group">
                     <label><?= lang('Auth.email') ?></label><br />
                     <input required type="email" name="email" value="<?= old('email') ?>"  class="form-control"/>
@@ -48,6 +51,7 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="form-group">
                     <label><?= lang('Auth.status') ?></label><br />
                     <select required name="status" value=""  class="form-control">
@@ -56,6 +60,7 @@
                         <option value="2"> Married </option>
                     </select>
                 </div>
+                -->
                 <!-- end user details -->
                 <br/>
                 <!-- address -->
@@ -91,6 +96,10 @@
                     <input required minlength="2" type="text" name="addr_zipcode" value=""  class="form-control"/>
                 </div>
                 <!-- end address -->
+                <div class="form-group">
+                    <label><?= lang('Auth.contact_no') ?></label><br />
+                    <input required type="tel" pattern="[+][0-9]{11,14}" name="contact_no" value=""  class="form-control"/>
+                </div>
                 <p>
                 <button  class="btn lwc-btn" name="registerButton" type="submit"><?= lang('Auth.register') ?></button>
                 </p>
