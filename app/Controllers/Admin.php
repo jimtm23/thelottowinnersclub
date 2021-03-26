@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Auth\Models\UserModel;
+use App\Models\Customers;
 use Config\Services;
 use PhpParser\Node\Expr\List_;
 
@@ -24,12 +24,34 @@ class Admin extends BaseController
 
     public function index()
     {
-        $users = new UserModel();		
+
         $data['title'] = 'Admin Page';
-        $data['results'] = $users->findAll(100);
+        //$data['results'] = $users->findAll(100);
+        $data['results'] = $this->viewCustomers();
         echo view('templates/header', $data);
-        echo view('templates/navbar');         
+        echo view('templates/navbar');
         echo view('admin/index.php',);
         echo view('templates/footer');
+    }
+
+    private function viewCustomers()
+    {
+        $db = db_connect();
+        $customers = new Customers();
+        $sessData = $_SESSION['userData'];
+        //$result = $customers->get_where('customers', array('user_id' => $sessData['email']));
+        //$result = $customers->getCustomerDetails($sessData['email']);
+
+        $sql = "SELECT * FROM customers WHERE user_id = ?";        
+
+        $query = $db->query($sql, [$sessData['email']]);
+        //$db->close();
+        
+
+        foreach ($query->getResult('array') as $row) {
+            echo $row['user_id'];
+            echo $row['first_name'];
+            
+        }
     }
 }

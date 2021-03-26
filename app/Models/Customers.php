@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Customer extends Model
+class Customers extends Model
 {
 
 	protected $table                = 'customers';
@@ -42,4 +42,11 @@ class Customer extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+
+	//public function getCustomerDetails($emailID){
+
+		//$query = $this->db->get_where('customers', array('user_id' => session()));	
+
+        //return $query->result_array(); 
+	//}
 }
