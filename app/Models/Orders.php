@@ -15,12 +15,12 @@ class Orders extends Model
 	protected $useSoftDelete        = false;
 
     protected $allowedFields = ['seq','lucky_no', 'type', 'status',
-        'notes', 'create_date', 'update_date'];
+        'notes', 'created_at', 'updated_at'];
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
-	protected $createdField         = 'create_date';
-	protected $updatedField         = 'update_date';
+	protected $createdField  		= 'created_at';
+	protected $updatedField  		= 'updated_at';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Customers;
+use CodeIgniter\Database\Query;
 use Config\Services;
 use PhpParser\Node\Expr\List_;
 
@@ -27,7 +28,11 @@ class Admin extends BaseController
 
         $data['title'] = 'Admin Page';
         //$data['results'] = $users->findAll(100);
+
+
+
         $data['results'] = $this->viewCustomers();
+        //$data['results'] = $query;
         echo view('templates/header', $data);
         echo view('templates/navbar');
         echo view('admin/index.php',);
@@ -36,22 +41,31 @@ class Admin extends BaseController
 
     private function viewCustomers()
     {
-        $db = db_connect();
+
         $customers = new Customers();
-        $sessData = $_SESSION['userData'];
-        //$result = $customers->get_where('customers', array('user_id' => $sessData['email']));
-        //$result = $customers->getCustomerDetails($sessData['email']);
 
-        $sql = "SELECT * FROM customers WHERE user_id = ?";        
+        $sessData = isset($_SESSION['userData']) ? $sessData = $_SESSION['userData'] : null;
 
-        $query = $db->query($sql, [$sessData['email']]);
-        //$db->close();
+        $records = $customers->asArray()->findAll();
+
+        //echo var_dump($records);
+
+
+        $newArray = [];
         
-
-        foreach ($query->getResult('array') as $row) {
-            echo $row['user_id'];
-            echo $row['first_name'];
-            
+        $result = [];
+        foreach ($records as $record) {
+            $result[] =  ['user_id'=>$record['user_id']
+            ,'name'=>$record['first_name'] . " " . $record['last_name']
+            ,'address'=>$record['addr_no'] . " " . $record['addr_bldg']
+                ." ".$record['addr_street'] . " " . $record['addr_state']
+                ." ".$record['addr_country']        
+            ,'contact_no'=>$record['contact_no']
+            ,'status'=>$record['status'] 
+        ];
+        
         }
+
+        return $result;
     }
 }

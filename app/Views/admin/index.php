@@ -6,9 +6,8 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
+                <th>User ID/Email Address</th>
+                <th>Name</th>
                 <th>Address</th>
                 <th>Contact Number</th>
                 <th>Status</th>
@@ -18,21 +17,21 @@
         </thead>
         <tbody>
             <?php if ($results != null) {
-                foreach ($results as $result) : ?>
+                foreach ($results  as $row) {
+            ?>
                     <tr>
-                        <td><?= $result['first_name'] ?></td>
-                        <td><?= $result['middle_name'] ?></td>
-                        <td><?= $result['last_name'] ?></td>
-                        <td><?= $result['addr_no'+'addr_street' +'addr_state']
-                        ?></td>
-                        <td><?= $result['contact'] ?></td>
-                        <td><?= $result['status'] ?></td>
+                        <?php
+                        foreach ($row as $rowKey => $rowValue) {
+                        ?>
+                            <td><?= $rowValue ?></td>
+                        <?php };
+                        ?>
                         <td>
                             <button class="btn btn-primary">Update</button>
                             <button class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
-            <?php endforeach;
+            <?php };
             }; ?>
 
         </tbody>
@@ -43,11 +42,12 @@
 </div>
 
 
-
 <script>
     $(document).ready(function() {
         $('.table').DataTable({
-            sortable: false
+            sortable: true,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "pageLength": 20
         });
     });
 </script>

@@ -10,10 +10,11 @@ class CreateCustomersTable extends Migration
     public function up()
     {
     	$this->forge->addField([
-            'user_id'           => ['type' => 'int', 'constraint' => 11, 'unsigned' => true],
-            'first_name'		=> ['type' => 'varchar', 'constraint' => 191],
-            'middle_name'       => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
-            'last_name'			=> ['type' => 'varchar', 'constraint' => 191],
+            'seq'           	=> ['type' => 'int', 'constraint' => 5, 'unsigned' => true, 'auto_increment' => true],	
+            'user_id'           => ['type' => 'varchar', 'constraint' => 50, 'unique' => TRUE],
+            'first_name'		=> ['type' => 'varchar', 'constraint' => 50],
+            'middle_name'       => ['type' => 'varchar', 'constraint' => 50, 'null' => true],
+            'last_name'			=> ['type' => 'varchar', 'constraint' => 50],
             'suffix'			=> ['type' => 'varchar', 'constraint' => 191, 'null' => true],
             'status'			=> ['type' => 'varchar', 'constraint' => 191],
             'addr_no'           => ['type' => 'varchar', 'constraint' => 191],
@@ -27,9 +28,12 @@ class CreateCustomersTable extends Migration
             'id_photo'          => ['type' => 'varchar', 'constraint' => 191, 'null' => true],          
             'face_photo'        => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
             'attachment'        => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
-            'notes'             => ['type' => 'varchar', 'constraint' => 191, 'null' => true]
+            'notes'             => ['type' => 'varchar', 'constraint' => 191, 'null' => true],
+            'created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP',
+            'updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'  
         ]);
-        $this->forge->addKey('user_id', true);       
+  
+        $this->forge->addKey('seq', true);   
         $this->forge->createTable('customers', true);
     }
 

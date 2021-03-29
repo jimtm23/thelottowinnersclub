@@ -16,9 +16,8 @@ class OrdersSeeder extends Seeder
                         'lucky_no'  	=> static::faker()->numfmt_format(1),
                         'type' 			=> 	static::faker(),
 						'status' 		=> static::faker(),
-						'notes'			=> static::faker(),
-						'create_date'	=> static::faker()->date_timestamp_set,
-						'update_date'	=> static::faker()->date_timestamp_set,
+						'notes'			=> static::faker()
+						
                 ]);
 	} 
 }

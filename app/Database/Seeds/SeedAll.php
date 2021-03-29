@@ -8,8 +8,11 @@ class SeedAll extends Seeder
 {
         public function run()
         {
-                $this->call('CustomerSeeder');
-                $this->call('OrdersSeeder');
-                $this->call('Transactions');
+                for ($i = 0; $i < 500; $i++) {
+                        $this->call('CustomerSeeder');
+                }
+
+                //$this->call('OrdersSeeder');
+                //$this->call('Transactions');
         }
 }

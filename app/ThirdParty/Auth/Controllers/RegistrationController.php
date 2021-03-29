@@ -2,6 +2,7 @@
 namespace Auth\Controllers;
 
 use App\Models\Customer;
+use App\Models\Customers;
 use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
@@ -82,7 +83,7 @@ class RegistrationController extends Controller
 
 //        send_activation_email($user['email'], $user['activate_hash']);
 
-        $customers = new Customer();
+        $customers = new Customers();
         $customer = [
             'user_id'       => $users->getInsertID(),
             'first_name'    => $this->request->getPost('firstName'),
