@@ -6,28 +6,15 @@
         <div class="col-lg-4 col-sm-6">
         <br>
             <h1>Member Details</h1>
-            <form method="POST" action="<?= route_to('members'); ?>" accept-charset="UTF-8"
+            <form method="POST" action="/members/saveCustomer" accept-charset="UTF-8"
                 onsubmit="saveButton.disabled = true; return true;">
                 <?= csrf_field() ?>
 
-
                 <div class="form-group">
                     <label><?= lang('Auth.email') ?></label><br />
-                    <input required type="user_id" name="user_id" value="<?= $userdata['user_id']?>" disabled  class="form-control"/>
+                    <input required type="email" name="user_id" value="<?= $userdata['user_id']?>" readonly  class="form-control"/>
                 </div>
-                <div class="form-group">
-                    <label>Current Password</label><br />
-                    <input required minlength="5" type="password" name="oldPassword" value=""  class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <label>New Password</label><br />
-                    <input required minlength="5" type="password" name="password" value=""  class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <label><?= lang('Auth.passwordAgain') ?></label><br />
-                    <input required minlength="5" type="password" name="password_confirm" value=""  class="form-control"/>
-                </div>
-                <br/>
+        
                 <!-- user details -->
                 <h2>User Details</h2>
                 <div class="form-group">

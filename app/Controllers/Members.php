@@ -53,5 +53,45 @@ class Members extends BaseController
         echo view('templates/footer');
     }
 
+    public function saveCustomer()
+	{
+        $userID = $this->request->getPost('user_id');
+		helper('text');
+        //echo $userID;
+        //echo $this->request->getPost('lastName');
+        $customers = new Customers();
+        $customer = $customers->asArray()->where('user_id', $userID)->first();
+
+        $custUpd = [
+            //'user_id'       => $customer['user_id'],
+            'first_name'    => $this->request->getPost('firstName'),
+            'middle_name'   => $this->request->getPost('middleName'),
+            'last_name'     => $this->request->getPost('lastName'),
+            'suffix'        => $this->request->getPost('suffix'),
+            //'status'        => $this->request->getPost('status'),
+            'addr_no'       => $this->request->getPost('addr_num'),
+            'addr_bldg'     => $this->request->getPost('addr_bldg'),
+            'addr_street'   => $this->request->getPost('addr_street'),
+            'addr_state'    => $this->request->getPost('addr_state'),
+            'addr_country'  => $this->request->getPost('addr_country'),
+            'addr_zipcode'  => $this->request->getPost('addr_zipcode'),
+			'contact_no'  	=> $this->request->getPost('contact_no'),
+            'id_type'       => "sample",
+            'id_photo'      => "sample",
+            'face_photo'    => "sample",
+            'attachment'    => "sample",
+            'notes'         => "sample"
+        ];
+        try {
+            $customers->update($customer['seq'],$custUpd);
+        } catch (\Exception $e) {
+            echo var_dump($custUpd);
+            echo $e->getMessage();
+        }
+
+     
+        return redirect()->to('/members/maintain?userID=' . $userID)->with('success', lang('Cutomer Saved'));
+	}
+
 
 }
