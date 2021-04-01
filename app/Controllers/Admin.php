@@ -39,7 +39,7 @@ class Admin extends BaseController
         echo view('templates/footer');
     }
 
-    private function viewCustomers()
+    public function viewCustomers()
     {
 
         $customers = new Customers();
@@ -52,20 +52,44 @@ class Admin extends BaseController
 
 
         $newArray = [];
-        
+
         $result = [];
+        $data = [];
         foreach ($records as $record) {
-            $result[] =  ['user_id'=>$record['user_id']
-            ,'name'=>$record['first_name'] . " " . $record['last_name']
-            ,'address'=>$record['addr_no'] . " " . $record['addr_bldg']
-                ." ".$record['addr_street'] . " " . $record['addr_state']
-                ." ".$record['addr_country']        
-            ,'contact_no'=>$record['contact_no']
-            ,'status'=>$record['status'] 
-        ];
-        
+            $result[] =  [
+                'user_id' => $record['user_id']
+                , 'name' => $record['first_name'] . " " . $record['last_name']
+                , 'address' => $record['addr_no'] . " " . $record['addr_bldg']
+                    . " " . $record['addr_street'] . " " . $record['addr_state']
+                    . " " . $record['addr_country']
+                    , 'contact_no' => $record['contact_no']
+                    , 'status' => $record['status']
+            ];
         }
 
+
+
+
+        // $data = [];
+        // foreach ($records as $record) {
+        //     $data[] =  [
+        //         'user_id' => $record['user_id']
+        //         , 'name' => $record['first_name'] . " " . $record['last_name']
+        //         , 'address' => $record['addr_no'] . " " . $record['addr_bldg']
+        //             . " " . $record['addr_street'] . " " . $record['addr_state']
+        //             . " " . $record['addr_country']
+        //             , 'contact_no' => $record['contact_no']
+        //             , 'status' => $record['status']
+        //     ];
+        // }
+
+
+        // $result = array(
+        //     "data" => $data
+        // );
+
+        //echo json_encode($result);
+        //exit();
         return $result;
     }
 }

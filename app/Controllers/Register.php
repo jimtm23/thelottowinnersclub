@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
  
 use CodeIgniter\Controller;
-use App\Models\UserModel;
+use Auth\Models\UserModel;
  
 class Register extends Controller
 {

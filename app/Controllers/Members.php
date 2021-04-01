@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Customers;
 use App\Models\Transactions;
 use Auth\Models\UserModel;
 use Config\Services;
@@ -37,4 +38,20 @@ class Members extends BaseController
         echo view('members/index.php',);
         echo view('templates/footer');
     }
+
+    public function maintain()
+    {
+        $userid= $_GET['userID'];
+        $customers = new Customers();
+        $customer = $customers->asArray()->where('user_id', $userid)->first();
+        
+        $data['title'] = 'Member Maintain Page';
+        $data['userdata'] = $customer;
+        echo view('templates/header', $data);
+        echo view('templates/navbar');                
+        echo view('members/maintainmember', ['config' => $this->config]);
+        echo view('templates/footer');
+    }
+
+
 }
