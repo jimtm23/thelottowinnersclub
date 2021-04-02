@@ -118,7 +118,7 @@
         +'<div><span>%S</span><p>sec</p></div>'));
     });
   
-    $('#remainTime1').countdown('2021/05/10', function(event) {
+    $('#remainTime1').countdown($results['pbNextDrawDate'], function(event) {
       $(this).html(event.strftime('%D days %H:%M:%S'));
     });
   

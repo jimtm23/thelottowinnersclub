@@ -26,12 +26,23 @@ class Draw extends Controller
         echo view('templates/footer');
     }
 
-    private function getLottoData($url) {
+    public function getLottoData($url) {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_HTTPGET, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        $result = curl_exec($curl);
+                        
+        //$result = curl_exec($curl);
+
+        if(($result = curl_exec($curl)) === false)
+        {
+            echo 'Curl error: ' . curl_error($curl);
+            die('111');
+        }
+        curl_close($curl);
+        //var_dump($result);
+        //exit('1');
+
 
         $jsonResult = json_decode($result, true);
         return $jsonResult;

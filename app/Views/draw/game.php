@@ -11,7 +11,7 @@
         <tbody>
             <?php foreach ($results as $result):?>
             <tr>
-                <td><?php  $date = new DateTime($result['drawDate']); echo $date->format('m/d/Y'); ?></td>
+                <td data-sort='YYYYMMDD'><b><?php  $date = new DateTime($result['drawDate']); echo $date->format('m/d/Y'); ?></b></td>
                     <td>
                         <ul class="balls">
                             <?php $numbers = explode("-",$result['winningNumbers']);?>

@@ -52,13 +52,31 @@ class Members extends BaseController
         echo view('members/maintainmember', ['config' => $this->config]);
         echo view('templates/footer');
     }
+    public function deleteCustomer(){
+        $userID = $this->request->getPost('userID');
+		helper('text');
+
+        $customers = new Customers();
+        $customer = $customers->asArray()->where('user_id', $userID)->first();
+        var_dump($customer);
+
+        try {
+            $customers->delete($customer['seq']);
+        } catch (\Exception $e) {            
+            echo $e->getMessage();
+        }
+        //var_dump($userID);
+
+     
+        return redirect()->to('/admin')->with('success', lang('Cutomer deleted'));
+
+    }
 
     public function saveCustomer()
 	{
         $userID = $this->request->getPost('user_id');
 		helper('text');
-        //echo $userID;
-        //echo $this->request->getPost('lastName');
+
         $customers = new Customers();
         $customer = $customers->asArray()->where('user_id', $userID)->first();
 
@@ -85,7 +103,6 @@ class Members extends BaseController
         try {
             $customers->update($customer['seq'],$custUpd);
         } catch (\Exception $e) {
-            echo var_dump($custUpd);
             echo $e->getMessage();
         }
 
