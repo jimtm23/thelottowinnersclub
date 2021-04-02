@@ -28,7 +28,7 @@
                 </div>
             <?php else: ?>
                 <div class="ml-auto">
-                    <span class="greeting"><?= lang('Auth.loggedInWelcome', [session('userData.email')]) ?> &nbsp;|&nbsp;</span>
+                    <span class="greeting"><?= lang('Auth.loggedInWelcome', [session('userData.name')]) ?> &nbsp;|&nbsp;</span>
                     <a class="greeting"href="<?= site_url('logout') ?>"><?= lang('Auth.logout') ?> &rarr;</a>
                 </div>
             <?php endif ?>

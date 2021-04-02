@@ -32,8 +32,8 @@
                                 <button class="btn btn-primary">Update</button>
                             </a>
                             -->
-                            <button id="updateBtn" class="btn btn-primary">Update</button>
-                            <button id="deleteBtn" class="btn btn-danger">Delete</button>
+                            <button id="submitBtn" class="btn btn-primary">Update</button>
+                            <button class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
             <?php };
@@ -44,35 +44,6 @@
 
     <br />
     <h2>Users Management </h2>
-    <table class="table table-striped" id="gridUsers">
-        <thead>
-            <tr>
-                <th>User ID/Email Address</th>
-                <th>Status</th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <?php if ($users != null) {
-                foreach ($users  as $row) {
-            ?>
-                    <tr>
-                        <?php
-                        foreach ($row as $rowKey => $rowValue) {
-                        ?>
-                            <td><?= $rowValue ?></td>
-                        <?php };
-                        ?>
-                        <td>
-                            <button id="updateUserBtn" class="btn btn-primary">Update</button>
-                            <button id="deleteUserBtn" class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-            <?php };
-            }; ?>
-
-        </tbody>
-    </table>
 
     <br />
     <br />
@@ -98,39 +69,20 @@
         //update
         var RowIndex = $(this).closest('tr');
         var data = dTable.row(RowIndex).data();
-        window.location.replace("/members/maintain?userID=" + data[0]);
+        window.location.replace("/members/maintain?userID="+data[0]);      
 
     });
+
+   
 
     $('#gridMembers').on('click', '.btn-danger', function() {
         //delete
         var RowIndex = $(this).closest('tr');
         var data = dTable.row(RowIndex).data();
+        alert(data[1]);
+        var url = "register.php?id=" + id;
+        //window.open(url, "_self")
+        //window.location = "/registration.php?id="+Data[0];
 
-        //window.location.replace("/members/deleteCustomer?userID=" + data[0]);
-
-        var url = '<?php base_url() ?>/members/deleteCustomer';
-        var params = "userID=" + data[0];
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-
-        //Send the proper header information along with the request
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send(params);
-        window.location.replace("/admin")
-
-    });
-    //********************************************** */
-    var dUserTable;
-    $(document).ready(function() {
-        dTable = $('#gridUsers').DataTable({
-            sortable: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ],
-            "pageLength": 10
-
-        });
     });
 </script>
