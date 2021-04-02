@@ -44,35 +44,6 @@
 
     <br />
     <h2>Users Management </h2>
-    <table class="table table-striped" id="gridUsers">
-        <thead>
-            <tr>
-                <th>User ID/Email Address</th>
-                <th>Status</th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <?php if ($users != null) {
-                foreach ($users  as $row) {
-            ?>
-                    <tr>
-                        <?php
-                        foreach ($row as $rowKey => $rowValue) {
-                        ?>
-                            <td><?= $rowValue ?></td>
-                        <?php };
-                        ?>
-                        <td>
-                            <button id="updateUserBtn" class="btn btn-primary">Update</button>
-                            <button id="deleteUserBtn" class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-            <?php };
-            }; ?>
-
-        </tbody>
-    </table>
 
     <br />
     <br />
@@ -102,6 +73,8 @@
 
     });
 
+
+
     $('#gridMembers').on('click', '.btn-danger', function() {
         //delete
         var RowIndex = $(this).closest('tr');
@@ -109,7 +82,7 @@
 
         //window.location.replace("/members/deleteCustomer?userID=" + data[0]);
 
-        var url = '<?php base_url() ?>/members/deleteCustomer';
+        var url = '<?php base_url()?>/members/deleteCustomer';
         var params = "userID=" + data[0];
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
@@ -119,18 +92,5 @@
         xhr.send(params);
         window.location.replace("/admin")
 
-    });
-    //********************************************** */
-    var dUserTable;
-    $(document).ready(function() {
-        dTable = $('#gridUsers').DataTable({
-            sortable: true,
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ],
-            "pageLength": 10
-
-        });
     });
 </script>
