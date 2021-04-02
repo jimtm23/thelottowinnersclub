@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Customers;
+use Auth\Models\UserModel;
 use CodeIgniter\Database\Query;
 use Config\Services;
 use PhpParser\Node\Expr\List_;
@@ -27,12 +28,9 @@ class Admin extends BaseController
     {
 
         $data['title'] = 'Admin Page';
-        //$data['results'] = $users->findAll(100);
-
-
-
+        $data['users'] = $this->viewUsers();
         $data['results'] = $this->viewCustomers();
-        //$data['results'] = $query;
+
         echo view('templates/header', $data);
         echo view('templates/navbar');
         echo view('admin/index.php',);
@@ -57,13 +55,9 @@ class Admin extends BaseController
         $data = [];
         foreach ($records as $record) {
             $result[] =  [
-                'user_id' => $record['user_id']
-                , 'name' => $record['first_name'] . " " . $record['last_name']
-                , 'address' => $record['addr_no'] . " " . $record['addr_bldg']
+                'user_id' => $record['user_id'], 'name' => $record['first_name'] . " " . $record['last_name'], 'address' => $record['addr_no'] . " " . $record['addr_bldg']
                     . " " . $record['addr_street'] . " " . $record['addr_state']
-                    . " " . $record['addr_country']
-                    , 'contact_no' => $record['contact_no']
-                    , 'status' => $record['status']
+                    . " " . $record['addr_country'], 'contact_no' => $record['contact_no'], 'status' => $record['status']
             ];
         }
 
@@ -90,6 +84,30 @@ class Admin extends BaseController
 
         //echo json_encode($result);
         //exit();
+        return $result;
+    }
+
+    public function viewUsers()
+    {
+
+        $users = new UserModel();
+
+        $sessData = isset($_SESSION['userData']) ? $sessData = $_SESSION['userData'] : null;
+
+        $records = $users->asArray()->findAll();
+
+        //echo var_dump($records);
+
+        $result = [];
+        $data = [];
+        foreach ($records as $record) {
+            $result[] =  [
+                'email' => $record['email'], 'active' => $record['active']
+
+            ];
+        }
+
+
         return $result;
     }
 }

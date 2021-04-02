@@ -146,7 +146,7 @@ class RegistrationController extends Controller
 		}
 
 		// update user account to active
-		$updatedUser['id'] = $user['id'];
+		$updatedUser['user_id'] = $user['user_id'];
 		$updatedUser['active'] = 1;
 		$users->save($updatedUser);
 
